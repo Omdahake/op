@@ -1,0 +1,772 @@
+1.	Write a PHP script to get the PHP version and configuration information(10marks)
+=>phpinfo();
+********************************************************************************************************************
+2.	Write a PHP script to display student information on web page.(10marks)
+=><html>
+
+ 
+</html>
+ 
+<?php
+class student
+{
+    public $name;
+	public $rno;
+}
+$a = new student();
+echo $a->name;
+echo "<br>";
+echo $a->rno;
+echo "<br>";
+$b = new student ();
+ $b->name="rohit";
+ echo $b->name;
+echo "<br>";
+$b->rno=22;
+echo $b->rno;
+?>
+***********************************************************************************************************************************
+3.	Write a PHP script to script to display time table of your class( use HTML table tags in echo).(10marks)
+=><h3>SYBCA(sci) TIME TABLE</h3>
+<table border=1 width=90% bordercolor=black align=center>
+<tr>
+<th><?php echo "Time" ?></th>
+<th><?php echo "MON"?></th>
+<th><?php echo "Tue"?></th>
+<th><?php echo "WED"?></th>
+<th><?php echo "THUS"?></th>
+<th><?php echo "FRI"?></th>
+<th><?php echo "SAT"?></th>
+</tr>
+<tr><td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td></tr>
+<tr><td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td></tr>
+<tr><td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td></tr>
+<tr><td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td></tr>
+</table>
+***********************************************************************************************************************************
+2.	Write a PHP script to check number 153 is Armstrong or not.(10marks)
+=>$num=157;  
+$total=0;  
+$x=$num;  
+while($x!=0)  
+{  
+$rem=$x%10;  
+$total=$total+$rem*$rem*$rem;  
+$x=$x/10;  
+}  
+if($num==$total)  
+{  
+echo "Yes it is an Armstrong number";  
+}  
+else  
+{  
+echo "No it is not an armstrong number";  
+}  
+
+3.	Write a PHP script to check whether accepted number is prime or not. (10marks)	
+=><?php
+
+     
+   $num=7;
+
+   $i=2;
+   while($i<=$num)
+   {
+     if($num%$i==0)
+     {
+        if($i==$num)
+        {
+            echo "the number is prime<br>";
+            break;
+        }
+        else
+        {
+            echo "The number is not a prime<br>";
+            break;
+        }
+      
+
+     }
+     $i++;
+   }
+?>
+***********************************************************************************************************************************
+Q1)Write a PHP script to print following floyd’s triangle.(10marks)
+A 
+B C
+D E F
+G H I J
+<?php
+$num = 65; // ASCII code for 'A'
+
+for ($i = 1; $i <= 4; $i++) { 
+  for ($j = 1; $j <= $i; $j++) {
+    echo chr($num)." "; // print the character
+    $num++; 
+  }
+  echo "<br>"; 
+}
+?>
+***********************************************************************************************************************************************************************************
+1.	Write a PHP script to print following floyd’s triangle.(10marks)
+1
+2 3
+4 5 6
+7 8 9 10
+=><?php
+
+  $n=4;
+  $value = 1;
+  for($i = 1; $i <= $n; $i++) 
+  {
+    for($j = 1; $j <= $i; $j++)
+     {
+      echo "$value "; 
+      $value++;
+    }
+    echo "<br>"; 
+  }
+
+
+?>
+************************************************************************************************************************
+2.	Write a PHP script to display source code of a webpage.(10marks)
+=><?php
+
+// Storing the elements of the webpage into an array
+$source_code = file('https://www.geeksforgeeks.org');
+
+// 1. traversing through each element of the array
+// 2.printing their subsequent HTML entities
+foreach ($source_code as $line_number => $last_line) {
+	echo nl2br(htmlspecialchars($last_line) . "\n");
+}
+
+?>
+*************************************************************************************************************************************
+3.	Write a PHP script to test whether a number is greater than 30, 20 or 10 using ternary operator.(10marks)
+=>
+<html>
+  <body>
+    <form action="<?php $_PHP_SELF ?>" method="POST">
+    Enter the number:
+    <input type="number" name="val">
+    <input type="submit">
+
+    </form>
+  </body>
+</html>
+<?php
+
+  $n=$_POST["val"];
+  $n > 30 ? print("$n is greater than 30") : ($n > 20 ? print("$n is greater than 20") : ($n > 10 ? print("$n is greater than 10") : print("Enter a number greater than 10")));
+
+?>
+**********************************************************************************************************************************
+1.	Write a PHP script to accept the number from user and Write a php function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument.(20marks)
+=>
+<html>
+<body>
+    <form action="<?php $_PHP_SELF ?>" method ="GET">
+    Enter the number:<input type="text"name="num"/><br>
+    <input type="submit"/>
+</form>
+</body>
+</html>
+
+<?php
+
+   if($_GET["num"])
+   {
+    $num=$_GET["num"];
+  function fact($num)
+  {
+    
+    if($num==0)
+    return 1;
+
+    return $num*(fact($num-1));
+  }
+     echo "Ther factorial of $num is".fact($num)."<br>";
+   }
+
+
+?>
+***********************************************************************************************************************************
+2.	Design a HTML form to accept a string. Write a php function to reverse a string(10marks)
+=><html>
+<body>
+    <center>
+    <form action="<?php $_PHP_SELF ?>" method ="GET">
+    Enter the string:<input type="text"name="str"/><br>
+    <input type="submit"/>
+</center>
+</form>
+</body>
+</html>
+
+<?php
+
+   if($_GET["str"])
+   {
+    $str=$_GET["str"];
+    
+     echo "<center>The revers of $str is  ".strrev($str)."<br></center>";
+     
+   }
+
+?>
+**********************************************************************************************************************************
+3.Design a HTML form to accept a string. Write a PHP function that checks whether a passed string is a palindrome or not? (10marks)
+=>
+<html>
+<body>
+    <center>
+    <form action="<?php $_PHP_SELF ?>" method ="GET">
+    Enter the string:<input type="text"name="str"/><br>
+    <input type="submit"/>
+    <?php
+
+   if($_GET["str"])
+   {
+    $str=$_GET["str"];
+    
+    
+    function palindrome($string) 
+    {
+      if ($string == strrev($string))
+          return 1;
+      else
+        return 0;
+    }
+    if(palindrome("$str"))
+    {
+        echo "<br><br>$str is palindrome string<br>";
+    }
+    else
+    {
+        echo "<br><br>not a palindrome";
+    }
+    
+     
+   }
+
+?>
+</center>
+</form>
+</body>
+</html>
+
+
+***********************************************************************************************************************************
+1.Design a HTML page to accept a number and write a PHP script to display that number in words e.g. 123 - one two three(20marks)
+=>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number to Words Converter</title>
+</head>
+<body>
+<form action="<?php $_PHP_SELF ?>" method ="GET">
+		<label for="number">Enter a number:</label>
+		<input type="number" name="number" id="number" required>
+		<input type="submit" value="Convert">
+	</form>
+</body>
+</html>
+
+<?php
+if($_GET['number']) {
+	$number = $_GET['number'];
+	$words = '';
+
+	$digit_array = array(
+		0 => 'zero', 
+		1 => 'one', 
+		2 => 'two', 
+		3 => 'three', 
+		4 => 'four', 
+		5 => 'five', 
+		6 => 'six', 
+		7 => 'seven', 
+		8 => 'eight', 
+		9 => 'nine'
+	);
+
+	$number_digits = str_split($number);
+
+	foreach ($number_digits as $digit) {
+		$words .= $digit_array[$digit] . ' ';
+	}
+
+	echo $words;
+}
+?>
+**********************************************************************************************************************************
+2.Design a HTML form to accept a string. Write a PHP script for the following.(20marks)
+ a) Write a function to count the total number of Vowels from the script.
+ b) Show the occurrences of each Vowel from the script.
+==><html>
+<body>
+<form action="<?php $_PHP_SELF ?>" method ="GET">
+Enter the String : <input type="text" name="inputStr"><br>
+<input type="submit" name="Submit">
+</form>
+</body>
+</html>
+<?php
+
+$string = $_GET['inputStr'];
+
+$vowels = array("a"=>0,"e"=>0,"i"=>0,"o"=>0,"u"=>0);
+$cnt=0;
+for($i=0; $i<strlen($string); $i++) {
+if(strtolower($string[$i]) == 'a') {
+++$cnt;
+++$vowels['a'];
+}
+if(strtolower($string[$i]) == 'e') {
+++$cnt;
+++$vowels['e'];
+}
+if(strtolower($string[$i]) == 'i') {
+++$cnt;
+++$vowels['i'];
+}
+if(strtolower($string[$i]) == 'o') {
+++$cnt;
+++$vowels['o'];
+}
+if(strtolower($string[$i]) == 'u') {
+++$cnt;
+++$vowels['u'];
+}
+}
+
+echo "<h1>Total number of vowels found : ".$cnt."<h1>";
+echo "Occurence of 'a' : ".$vowels['a']."<br>";
+echo "Occurence of 'e' : ".$vowels['e']."<br>";
+echo "Occurence of 'i' : ".$vowels['i']."<br>";
+echo "Occurence of 'o' : ".$vowels['o']."<br>";
+echo "Occurence of 'u' : ".$vowels['u']."<br>";
+
+?>
+**********************************************************************************************************************************
+3.Write a PHP script for the following: (20marks)
+a) Design a form to accept two numbers from the users.
+ b) Give option to choose an arithmetic operation (use Radio Button).
+ c) Display the result on next form. d) Use concept of default parameter.
+==><!DOCTYPE html>
+<html>
+<head>
+	<title>Arithmetic Calculator</title>
+</head>
+<body>
+	<?php
+		function calculate($num1, $num2, $operation = '+') {
+			switch ($operation) {
+				case '+':
+					return $num1 + $num2;
+				case '-':
+					return $num1 - $num2;
+				case '*':
+					return $num1 * $num2;
+				case '/':
+					if ($num2 == 0) {
+						return "Cannot divide by zero";
+					}
+					return $num1 / $num2;
+				default:
+					return "Invalid operation";
+			}
+		}
+
+		if(isset($_POST['submit'])) {
+			$num1 = $_POST['num1'];
+			$num2 = $_POST['num2'];
+			$operation = $_POST['operation'];
+			$result = calculate($num1, $num2, $operation);
+			echo "<p>Result: $result</p>";
+		}
+	?>
+
+<form action="<?php $_PHP_SELF ?>" method ="POST">
+		Number 1:
+		<input type="number" name="num1" ><br><br>
+
+		Number 2:
+		<input type="number" name="num2" ><br><br>
+
+		Select an operation:<br>
+		<input type="radio" name="operation" value="+" checked> Addition<br>
+		<input type="radio" name="operation" value="-"> Subtraction<br>
+		<input type="radio" name="operation" value="*"> Multiplication<br>
+		<input type="radio" name="operation" value="/"> Division<br><br>
+
+		<input type="submit" name="submit" value="Calculate">
+	</form>
+</body>
+</html>
+***********************************************************************************************************************************
+1.Design a HTML form to accept email address from the user. Write a PHP function using regular expressions check for the validity of entered email-id. The @ symbol should not appear more than once. The dot (.) can appear at the most once before @ and at the most twice or at least once after @ symbol. The substring before @ should not begin with a digit or underscore or dot or @ or any other special character. (Use explode and ereg function.)
+==>
+
+
+
+
+
+
+
+
+
+
+
+3.	Write a PHP script for the following: Design a form to accept two strings. (20marks)
+Compare the two strings using both methods (= = operator & strcmp function).
+ Append second string to the first string. Accept the position from the user; 
+from where the characters from the first string are reversed. (Use radio buttons)
+==>
+<html>
+<head><title>   .html</title></head>
+<body bgcolor="skyblue" >
+<form action="<?php $_PHP_SELF ?>" method ="POST">
+<pre>
+                                                                                                                             
+        Enter first string ::<input type="text" name="str1">
+                                                                                                                             
+        Enter second string::<input type="text" name="str2">
+                                                                                                                             
+        Enter position::<input type='text' name="pos">
+                                                                                                                             
+        
+                        <input type="radio" name="ch" value=1>compare
+                                                                                                                             
+                        <input type="radio" name="ch" value=2>with datatype
+                                                                                                                             
+                        <input type="radio" name="ch" value=3>append.
+                                                                                                                             
+                        <input type="radio" name="ch" value=4>possition for reverse.
+                                                                                                                             
+                        <input type="submit" value="check">     <input type="reset" value="cancel">
+</pre>
+</form>
+</body>
+
+</html>
+
+<?php
+        $str1=$_POST['str1'];
+        $str2=$_POST['str2'];
+        $pos=$_POST['pos'];
+        $ch=$_POST['ch'];
+        echo"First string  :: $str1.<br><br>";
+                                                                                                                             
+        echo "Second string::$str2.<br><br>";
+                                                                                                                             
+        echo"position for reverse::$pos.<br><br>";
+                                                                                                                             
+        echo"choice is::$ch.<br><br>";
+                                                                                                                             
+        switch($ch)
+        {
+        case 1:
+                if($str1==$str2)
+                        echo"Both string are equal.<br>";
+                else
+                        echo"Both string are not equal.<br>";
+        break;
+        case 2:
+                if($str1===$str2)
+                        echo"Both are exat equal.<BR>";
+                else
+                        echo"Both are not equal.<BR>";
+        break;
+        case 3:
+                echo"After appending::";
+                echo "$str1"."$str2";
+                echo"<br>";
+        break;
+        case 4: $len=strlen($str1)-$pos;
+                $s=substr($str1,$pos,$len);
+                $str4=strrev($s);
+                echo "After reverse:: $str4.<br>";
+        break;
+        }
+
+?>
+***********************************************************************************************************************************
+1.	Write a menu driven program to perform the following operations on an associative array:(20marks)
+a)	Display the elements of an array along with the keys.
+b)	Display the size of an array
+a)	Reverse the order of each element’s key-value pair. [Hint: array_flip()] 
+b)	Traverse the element in an array in random order. [Hint: shuffle()]
+
+==>
+<html>
+<form action="<?php $_PHP_SELF ?>" method ="POST">
+<pre>   <h3>OPERATIONS</h3>                                                                                                                    
+        1<input type='radio' name='a' value='1'>Display.<br>
+        2<input type='radio' name='a' value='2'>size.<br>
+        3<input type='radio' name='a' value='3'>delete.<br>
+        4<input type='radio' name='a' value='4'>reverse.<br>
+        5<input type='radio' name='a' value='5'>traverse.<br>
+        <input type='submit' value='ok'>        <input type='reset' value='cancel'><br>
+</pre>
+</form>
+</body>
+</html>
+<?php
+        $array=array('zero'=>0,'one'=>1,'two'=>2,'three'=>3,'four'=>4,'five'=>5);
+        $ch=$_POST['a'];
+        switch($ch)
+        {
+        case 1:foreach($array as $key=>$value)
+                {
+                        echo"key:$key       val:$value.<br>";
+                }break;
+        case 2:echo sizeof($array);
+                break;
+        case 3 :
+                $len=sizeof($array);               
+                array_splice($array,$len);
+                print_r( $array);
+                break;
+        case 4 :
+                print_r(array_flip($array));
+                break;
+        case 5 :
+                shuffle($array);
+                print_r($array);
+                break;
+     
+              
+        }
+
+?>
+****************************************************************************************************************************************
+3.Declare array. Reverse the order of elements, making the first element last and last element first and(20marks)
+ similarly rearranging other array elements.[Hint : array_reverse()] 
+==><?php
+
+
+
+$array = array("om", "ganesh", "karan", "naytik");
+
+echo "Before:<br>";
+foreach($array as $val)
+{
+    echo "$val ";
+}  
+
+$rev=array_reverse($array);
+
+echo "<br>After:<br>";
+foreach($rev as $val)
+{
+    echo "$val ";
+}   
+
+
+
+
+?>
+***************************************************************************************************************************************
+1.Declare a Multidimensional Array. Display specific element from a Multidimensional array. (20marks)
+Also delete given element from the Multidimensional array.(After each operation display array content).
+==><html>
+<body >
+<?php
+$student=array('0'=>array('name'=> 'deepak' ,'age'=>20,'addr'=>'pune'),
+            '1'=>array('name'=> 'ujjwal', 'age'=>21,'addr'=>'kolhapur'),
+            '2'=>array('name'=> 'shubham' , 'age'=>19,'addr'=>'mumbai'),
+            '3'=>array('name'=> 'dhiraj' , 'age'=>21,'addr'=>'nanded'));
+print_r($student);                                                                                                                          
+echo "<br>";
+echo "<br> Element for delete is:";
+echo "<br>student[1]['age']<br>";
+echo $student[1]['age'];
+echo "<br><br>";
+unset($student[1]['age']);
+print_r($student);
+?>
+</body>
+</html>
+
+2.	Write a menu driven program to perform the following stack related operations. (20marks)
+a)	Insert an element in stack. 
+b)	Delete an element from stack.[Hint: array_push(), array_pop()] 
+==><html>
+<body >
+<form action="<?php $_PHP_SELF?>" method="post">
+Enter choice :
+<br><input type="radio" name="ch" value=1> Insert element in stack <br>
+<input type="radio" name="ch" value=2> Delete element from stack <br>
+<input type="radio" name="ch" value=3> Display content of stack <br>
+<input type="radio" name="ch" value=4> Insert element in queue<br>
+<input type="radio" name="ch" value=5> Delete element from queue <br>
+<input type="radio" name="ch" value=6> Display content of queue <br>
+<br>
+ 
+<input type="submit" value="submit">
+<input type="reset" value="reset">
+</body>
+ 
+</html>
+
+<html>
+<body >
+<?php
+$choice=$_POST['ch'];
+{
+        $arr=array(1,2,3,4,5,6,7,8,9,10);
+        switch($choice)
+        {
+                case 1:
+                        array_push($arr,10);
+                        print_r($arr);
+                        break;
+                case 2:
+                        $ele=array_pop($arr);
+                        echo "Poped element : $ele";
+                        break;
+                case 3:
+                        print_r($arr);
+                        break;
+                case 4:
+                        array_unshift($arr,"10");
+                        print_r($arr);
+                        break;
+                case 5:
+                        $ele=array_shift($arr);
+                        echo "Deleted element : $ele";
+                        break;
+                case 6:
+                        print_r($arr);
+                        break;
+        }
+}
+
+
+***********************************************************************************************************************************
+1.	Write a menu driven program to perform the following operations on associative arrays:(20marks)
+a)	Merge the given arrays.
+b)	Find the intersection of two arrays.
+c)	Find the union of two arrays.
+d)	Find set difference of two arrays.
+==>
+ <html>
+ 
+<body >
+<form action="<?php $_PHP_SELF ?>" method="post">
+<h2>Enter choice :</h2>
+<input type="radio" name="ch" value=1> Sort array by values in ascending,descending order<br>
+<input type="radio" name="ch" value=2> Sort array by values without changing key values <br>
+<input type="radio" name="ch" value=3> Filter odd elements from array <br>
+<input type="radio" name="ch" value=4> Sort different array at glance using single function<br>
+<input type="radio" name="ch" value=5> Merge given two arrays <br>
+<input type="radio" name="ch" value=6> Find intersection of two array <br>
+<input type="radio" name="ch" value=7> Find union of two array <br>
+<input type="radio" name="ch" value=8> Find set difference of two array <br>
+<br>
+ 
+<input type="submit" value="SUBMIT">  <input type="reset" value="CLEAR">
+ 
+</body>
+ 
+</html>
+
+<html>
+<body >
+ 
+<?php
+function is_odd($var)
+{
+if($var%2==1)
+return $var;
+}
+                                                                                                                              
+$choice=$_POST['ch'];
+ 
+        $arr=array('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5,'f'=>6,'g'=>7,'h'=>8);
+        $arr1=array('l'=>11,'m'=>22,'n'=>33,'o'=>44,'p'=>55,'q'=>66,'r'=>77,'s'=>88);
+        $arr2=array('a'=>10,'b'=>20,'c'=>30,'d'=>40,'e'=>50,'f'=>60,'g'=>70,'h'=>80);
+        switch($choice)
+        {
+                case 1:
+                        sort($arr);
+                        echo "Array in ascending order:<br>";
+                        print_r($arr);
+                        rsort($arr);
+                        echo "<br>Array in descending order:<br>";
+                        print_r($arr);
+                        break;
+                case 2:
+                        asort($arr);
+                        echo "Array in ascending order:<br>";
+                        print_r($arr);
+                        arsort($arr);
+                        echo "<br>Array in descending order:<br>";
+                        print_r($arr);
+                        break;
+               case 3:
+                        print_r(array_filter($arr,'is_odd'));
+                        break;
+                case 4:
+                        array_multisort($arr,0,$arr1,1,$arr2,0);
+                        print_r($arr);
+                        echo "<br>";
+                        print_r($arr1);
+                        echo "<br>";
+                        print_r($arr2);
+                        echo "<br>";
+                        break;
+                case 5:
+                        print_r(array_merge($arr,$arr1));
+                        break;
+                case 6:
+                        print_r(array_intersect($arr,$arr1));
+                        break;
+                case 7:
+                        $union=array_merge($arr,$arr1);
+                        print_r(array_unique($union));
+                        break;
+                case 8:
+                        print_r(array_diff($arr,$arr1));
+                        break;
+        }
+ 
+        
+?>
+
+</body>
+</html>
+**********************************************************************************************************************************
+
+
+
+
+

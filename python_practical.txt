@@ -1,0 +1,401 @@
+Q1.Write a Python function to check whether a number is in a given range
+=>def test_range(num,start,end):
+   return start<=num<=end
+
+
+num=42
+start=30
+end=52
+
+if test_range(num,start,end):
+     print(num)
+     print("its in a range")
+else:
+    print(num)
+    print("not in a range")
+******************************************************************************************************************************
+Q2)Write a Python program to find set difference, union,intersection, and
+symmetric difference
+=>set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+
+diff = set1 - set2
+print("Set difference: " ,diff)
+
+
+union = set1 | set2
+print("Set union: ",union) 
+
+
+intersection = set1 & set2
+print("Set intersection: ",intersection)  
+
+
+sym_diff = set1 ^ set2
+print("Set symmetric difference: ",sym_diff) 
+******************************************************************************************************************************
+Q3)Write a Python program to print a dictionary where the keys are number
+between 1 and 15 (both included)and the values are square of the keys sample
+dictionary:{10:100,20:400,30:900,40:1600,50:2500}
+=>squares = {}
+
+for num in range(1, 16):
+    squares[num] = num ** 2 #use to the power **
+
+print(squares)
+*****************************************************************************************************************************
+Q4)write python program to get the 4th element front and 4th element from last of a tuple
+=>print(num)
+
+fourth_first=num[3]
+fourth_last=num[-4]
+
+print("Fourth from first is : ",fourth_first)
+print("Fourth from last is : ",fourth_last)
+*****************************************************************************************************************************
+Q5)write python program to combine two dictionary adding values for common keys
+=>
+dict1={'a':10,'b':20,'c':30}
+dict2={'b':20,'c':40,'d':50}
+
+combined_dict={}
+
+for key,value in dict1.items():
+    combined_dict[key]=value
+
+
+for key,value in dict2.items():
+    if key in combined_dict:
+     combined_dict[key]+=value
+    else:
+       combined_dict[key]=value
+
+print(combined_dict)
+******************************************************************************************************************************
+Q6)write a python program to perform given operation on set 
+a)check whether 2 sets are equal or not 
+b)symmetric difference 
+c)intersection of sets
+d)find maximum and minimum value in set
+==>set1={1,2,3,4,5}
+set2={3,4,5,6,7}
+
+if set1==set2:
+    print("sets are equal")
+else:
+    print("sets are not equal")
+
+    sym_diff=set1 ^ set2
+    print("The symmetric difference is: ",sym_diff)
+
+    intersection=set1 & set2
+    print("The interesection of sets is",intersection)
+
+    max_val=max(set1)
+    min_val=min(set2)
+
+    print("Maximum valu is :",max_val)
+    print("Minimum value is :",min_val)
+*****************************************************************************************************************************
+Q7)write a python program to find  repeated values in a Tuple
+=>given_tuple=(1,2,3,2,4,5,5,6,1)
+repeated_val=[]
+for value in given_tuple:
+    if given_tuple.count(value)>1 and value not in repeated_val:
+        repeated_val.append(value)
+
+print("Repeated values in the tuple: ",repeated_val)
+*****************************************************************************************************************************
+Q8)write a python program to match key values in two dictionaries sample dictionary: { 'key1':1,'key2':3,'key3':2},{'key1':1,'key2':2}
+==>
+dict1 = {'key1': 1, 'key2': 3, 'key3': 2}
+dict2 = {'key1': 1, 'key2': 2}
+
+
+for key in dict2:
+    
+    if key in dict1 and dict1[key] == dict2[key]:
+        print("The value of ",key," in both dictionaries is",dict1[key])
+*****************************************************************************************************************************
+Q9)Write a python program to sort the tuple (4,2,6,8,1,8,10)
+==>
+tup=(4,2,6,8,1,8,10)
+sort=sorted(tup)
+print("Sorted tuple:",sort)
+*****************************************************************************************************************************
+Q10)Write a python program to print the set difference & a symmetric difference of two sets.
+==>set1={1,2,3,4,5}
+set2={3,4,5,6,7}
+
+print("The set difference is",set1-set2)
+print("The syymetric difference is",set1^set2)
+*****************************************************************************************************************************
+Q11)Write a python program to find maximum and the minimum value in a set
+==>set1={12,54,23,87,2}
+print(set1)
+
+print("max of set is:",max(set1))
+print("min of set is:",min(set1))
+*****************************************************************************************************************************
+Q12)Write a python program to print average of all elements of sets
+==>
+set1={1,5,32,45}
+average=sum(set1)/len(set1)
+print(set1)
+print("The average of set is:",average)
+*****************************************************************************************************************************
+Q13)Write a python program to create a tuple using two different tuple.
+==>tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Create a new tuple by combining tuple1 and tuple2
+new_tuple = tuple1 + tuple2
+print("New tuple:", new_tuple)
+*****************************************************************************************************************************
+Q14)write anonymous function for area of square
+==>	area_square = lambda side: side ** 2
+
+
+area = area_square(4)
+print("Area of square:", area)
+*****************************************************************************************************************************
+Q15)write a python program to accept the strings which contains all vowels.
+==>vowels = ('a', 'e', 'i', 'o', 'u')
+string = input("Enter a string: ")
+
+counts = tuple(string.lower().count(vowel) for vowel in vowels)
+
+
+if all(counts):
+    print("String contains all vowels!")
+else:
+    print("String does not contain all vowels.")
+
+*****************************************************************************************************************************
+Q16) write python program to find length of string without using built in function
+==>
+string = input("Enter a string: ")
+
+count = 0
+for char in string:
+    count += 1
+
+print("The length of the string is:", count)
+*****************************************************************************************************************************
+Q17)write a python program to create of tuple of  n numbers & print maximum,
+minimum & sum of elements in a tuple.
+==>n = int(input("Enter the number of elements: "))
+
+nums = ()
+
+for i in range(n):
+    num = int(input("Enter an element: "))
+    nums += (num,)
+
+
+print("Maximum:", max(nums))
+print("Minimum:", min(nums))
+print("Sum:", sum(nums))
+*****************************************************************************************************************************
+Q18)Write a Python program to check if a palindrome or not.
+==>string=input("Enter the string:")
+reverse_string = "".join(reversed(string))
+
+if string == reverse_string:
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+*****************************************************************************************************************************
+Q19)write a python program to accept and convert string in uppercase or vice versa.
+==>string = input("Enter a string: ")
+
+result = string.upper()
+print("Uppercase string:", result)
+
+result = string.lower()
+print("Lowercase string:", result)
+*****************************************************************************************************************************
+Q20)Write a python program to  unpack a tuple In several variable.
+==>my_tuple = (1, 2, 3)
+a, b, c = my_tuple
+print(a, b, c)  # Output: 1 2 3
+
+*****************************************************************************************************************************
+Q21)write a python program which as integer value. n. and display all prime numbers till 'n'.
+==>n = int(input("Enter the number: "))
+
+print("Prime numbers till", n, "are:")
+
+for num in range (2,n + 1):  
+    if num > 1:  
+        for i in range (2, num):  
+            if (num % i) == 0:  
+                break  
+        else:  
+            print (num)  
+*****************************************************************************************************************************
+Q22)write a python function to multiply all the numbers in list sample_list(8,3,2,-1,7)
+==>def mult_list(new):
+    result=1
+    for num in new:
+        result *= num
+    return result
+    
+new=[8,3,2,-1,7]
+result=mult_list(new)
+print(result)
+*****************************************************************************************************************************
+Q23)write a python program to create set with any 3 weekdays . add a single element to the set and print it add  multiple elements and print the set 
+==>weekdays_set = {"Monday", "Wednesday", "Friday"}
+
+
+weekdays_set.add("Tuesday")
+print("After adding one element:", weekdays_set)
+
+weekdays_set.update(["Thursday", "Saturday", "Sunday"])
+print("After adding multiple elements:", weekdays_set)
+*****************************************************************************************************************************
+Q24)Write a function to calculate the sum of number from 0 to n.
+==>def sumofnum(num):
+    sum=0
+    for i in range(num+1):
+        sum+=i
+    return sum
+
+num=int(input("Enter the number: "))
+print("The sum form 0 to ",num," is ",sumofnum(num))
+*****************************************************************************************************************************
+Q25).Write a python program to Create & display all combinations of letter, selecting each letter from a different key in a dictionary. 
+Sample data : { '1':['a','b'], '2' : ['c','d']}
+==>data = {'1': ['a', 'b'], '2': ['c', 'd']}
+
+for i in data['1']:
+  for j in data['2']:
+     print(i+j)
+*****************************************************************************************************************************
+Q26)Write a python script to generate and print a dictionary that contains a number between 1 to n in the form x,x*x  sample dictionary n=5 expected output {1:1,2:4,3:8,4:16,5:25}
+==>n = 5
+result_dict = {}
+
+for i in range(1, n+1):
+    result_dict[i] = i ** 2
+
+print(result_dict)
+*****************************************************************************************************************************
+Q27)Write a python program to match key values in two dictionaries where dictionaries are 
+dict1 = {key1': 1, 'key2': 3, 'key3': 2}, dict2 = {key1': 1, 'key2': 2}
+==>dict1 ={'key1': 1, 'key2': 3, 'key3': 2}
+dict2 ={'key1': 1, 'key2': 2}
+matching_keys =[]
+for key in dict1.keys():
+    if key in dict2.keys() and dict1[key] == dict2[key]:
+        matching_keys.append(key)
+print(matching_keys)
+*****************************************************************************************************************************
+Q28)write a python program to count occurences of each word in given 
+sentence.
+==>def word_count(str):
+    counts = dict()
+    words = str.split()
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+    return counts
+
+print(word_count('todaty is python practical best language is python.'))
+*****************************************************************************************************************************
+Q29)Write python program to count frequency of each character in a string using user defined function
+==>def count_chars(s):
+    counts = {}
+    for char in s:
+        if char in counts:
+            counts[char] += 1
+        else:
+            counts[char] = 1
+    return counts
+
+
+s = "Hello,all"
+char_counts = count_chars(s)
+print(char_counts)
+*****************************************************************************************************************************
+Q30)Write a Python program to reverse a given string.
+==>num = 1234
+reversed_num = 0
+while num != 0:
+   digit = num % 10
+   reversed_num = reversed_num * 10 + digit
+   num //= 10
+
+print("Reversed Number: " + str(reversed_num))
+*****************************************************************************************************************************
+Q31)write a python a  program to accept a string  and remove the characters which have odd index values of a given string using user defined function
+==>def remove_odd_chars(s):
+    new_s = ""
+    for i in range(len(s)):
+        if i % 2 != 0:
+            new_s += s[i]
+    return new_s
+
+
+s = input("Enter a string: ")
+
+
+new_s = remove_odd_chars(s)
+
+
+print("Original string:", s)
+print("New string with  removed characters:", new_s)
+*****************************************************************************************************************************
+Q32) Write a Python program which finds sum of digits of number.
+==>def getsum(n):
+    sum=0
+    for digit in str(n):
+        sum+=int(digit)
+    return sum
+
+n=123
+print(getsum(n))
+*****************************************************************************************************************************
+Q33)write program that prints the Fibonacci series up to a specified number n:
+==>def fibonacci(n):
+    
+    a, b = 0, 1
+    print(a)
+    print(b)
+    while b < n:
+        c = a + b
+        print(c)
+        a=b
+        b=c
+        
+n = int(input("Enter a number: "))
+fibonacci(n)
+*****************************************************************************************************************************
+Q34)write a python function to get a string made of the first 2 and last  2 chars  from a given  string .if the string length is less than 2 ,it return empty string 
+==>def get_string(str):
+    if len(str) < 2:
+        return ""
+    else:
+        return str[:2] + str[-2:]
+
+print(get_string("hello world")) 
+*****************************************************************************************************************************
+Q35)Write a Sequential search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
+==>def sequential_search(sorted_list, element):
+    for i in range(len(sorted_list)):
+        if sorted_list[i] == element:
+            return i
+        elif sorted_list[i] > element:
+            return -1
+    return -1
+
+my_list = [1, 3, 5, 7, 9, 11]
+search_item = 7
+print(sequential_search(my_list, search_item))  
+*****************************************************************************************************************************
+
+
